@@ -45,13 +45,25 @@
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
-                            
+
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item {{ request()->is(['home','/']) ? 'active' : '' }}">
+                                <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item {{ request()->is('*user') ? 'active' : '' }}">
+                                <a class="nav-link" href="#">User</a>
+                            </li>
+                            <li class="nav-item {{ request()->is('*category') ? 'active' : '' }}">
+                                <a class="nav-link" href="#">Category</a>
+                            </li>
+                            <li class="nav-item {{ request()->is('*book') ? 'active' : '' }}">
+                                <a class="nav-link" href="#">Book</a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
