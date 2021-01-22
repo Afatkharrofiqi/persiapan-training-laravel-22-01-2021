@@ -111,4 +111,8 @@ class CategoryController extends Controller
 
         return redirect()->route('category.index')->with('status', 'Category '.$category->name.' berhasil dihapus.');
     }
+
+    public function getSelect2Data(){
+        return Category::all();
+    }
 }
