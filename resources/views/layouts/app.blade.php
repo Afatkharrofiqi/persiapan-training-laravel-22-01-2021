@@ -59,7 +59,7 @@
                                 <a class="nav-link" href="{{ route('user.index') }}">User</a>
                             </li>
                             <li class="nav-item {{ request()->is('*category') ? 'active' : '' }}">
-                                <a class="nav-link" href="#">Category</a>
+                                <a class="nav-link" href="{{ route('category.index') }}">Category</a>
                             </li>
                             <li class="nav-item {{ request()->is('*book') ? 'active' : '' }}">
                                 <a class="nav-link" href="#">Book</a>
